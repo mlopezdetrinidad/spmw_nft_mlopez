@@ -2,16 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const NFTCard = (props) => {
-    const { nft } = props;
+    const { nft, toggleModal } = props;
   
     return (
-        <NftCard>
-        <NftPhoto backgroundImageURL={nft.image} />
-        <div style={{ margin: 5}}>
-            <NftCollectionText> {nft && nft.symbol} </NftCollectionText>
-            <NftName> {nft && nft.name} </NftName>
-            <NftName float="right"> {`x${nft && nft.copies}`} </NftName>
-        </div>
+        <NftCard onClick={() => toggleModal()}>
+          <NftPhoto backgroundImageURL={nft.image} />
+          <div style={{ margin: 5}}>
+              <NftCollectionText> {nft && nft.symbol} </NftCollectionText>
+              <NftName> {nft && nft.name} </NftName>
+              <NftName float="right"> {`x${nft && nft.copies}`} </NftName>
+          </div>
         </NftCard>
     );
 };
